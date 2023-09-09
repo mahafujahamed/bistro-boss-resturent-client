@@ -16,24 +16,24 @@ const MyCart = () => {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`http://localhost:5000/carts/${item._id}`, {
-                method: 'DELETE',
-              })
-              .then(res => res.json())
-              .then(data => {
-                if(data.deletedCount > 0) {
-                    refetch();
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                      )
-                }
-              })
+                fetch(`http://localhost:5000/carts/${item._id}`, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
             }
-          })
+        })
     }
     return (
         <div className="w-full">
@@ -77,7 +77,8 @@ const MyCart = () => {
                                 </td>
                                 <td className="">${item.price}</td>
                                 <td>
-                                    <button onClick={() =>handleDelete(item)} className="btn btn-ghost bg-red-500 text-white"><FaTrashAlt></FaTrashAlt></button>
+                                    <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-500 text-white"><FaTrashAlt></FaTrashAlt>
+                                    </button>
                                 </td>
                             </tr>)
                         }

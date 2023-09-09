@@ -4,6 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true);
@@ -31,13 +32,13 @@ const Login = () => {
                 Swal.fire({
                     title: 'User Login Successful',
                     showClass: {
-                      popup: 'animate__animated animate__fadeInDown'
+                        popup: 'animate__animated animate__fadeInDown'
                     },
                     hideClass: {
-                      popup: 'animate__animated animate__fadeOutUp'
+                        popup: 'animate__animated animate__fadeOutUp'
                     }
-                  });
-                  navigate(from, { replace: true});
+                });
+                navigate(from, { replace: true });
             })
     }
 
@@ -83,13 +84,14 @@ const Login = () => {
                                 <label className="label">
                                     <LoadCanvasTemplate />
                                 </label>
-                                <input type="text" onBlur={handleValidateCaptcha}  name="Captcha" placeholder="Type the text above" className="input input-bordered" />
+                                <input type="text" onBlur={handleValidateCaptcha} name="Captcha" placeholder="Type the text above" className="input input-bordered" />
                             </div>
                             <div className="form-control mt-6">
                                 <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
                         <p><small>New Here? <Link to="/signup">Create an Account</Link></small></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
