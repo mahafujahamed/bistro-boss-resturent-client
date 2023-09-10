@@ -29,6 +29,7 @@ const AllUsers = () => {
         })
     }
 
+
     const handleDelete = user => {
 
     }
@@ -68,7 +69,6 @@ const AllUsers = () => {
                                 </td>
                             </tr>)
                         }
-
                     </tbody>
                 </table>
             </div>
