@@ -35,7 +35,7 @@ const AllUsers = () => {
 
     }
     return (
-        <div className="w-full">
+        <div className="w-full px-10">
             <Helmet>
                 <title>Bistro | All Users</title>
             </Helmet>
