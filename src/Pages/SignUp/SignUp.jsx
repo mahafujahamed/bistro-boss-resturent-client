@@ -24,7 +24,7 @@ const SignUp = () => {
                     .then(() => {
                         const saveUser = {name: data.name, email: data.email}
                         // console.log('Profile Updated');
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://bistro-boss-resturent-server-lag310oe7-duplicate-yours.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
